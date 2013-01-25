@@ -10,6 +10,8 @@ namespace GTD_G
     public partial class MainPage : PhoneApplicationPage
     {
         public List<string> ListP = new List<string>();
+        public int sum = 0;
+     
         // Constructor
         public MainPage()
         {
@@ -33,6 +35,10 @@ namespace GTD_G
             if (IsolatedStorageSettings.ApplicationSettings.Contains("Name") == true)
             {
                 FirstListBox.Items.Add(IsolatedStorageSettings.ApplicationSettings["Name"].ToString());
+                int a = (int)IsolatedStorageSettings.ApplicationSettings["Value"];
+               
+                sum = sum + a;
+                Total.Text = sum.ToString();
             }
             else
             {

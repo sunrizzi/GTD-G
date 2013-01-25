@@ -21,23 +21,22 @@
         <controls:Pivot Title="Ваш список дел">
             <!--Pivot item one-->
             <controls:PivotItem>
-                
-                <ListBox x:Name="FirstListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+                <StackPanel>
+                    <ListBox x:Name="FirstListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}" Height="550" VerticalAlignment="Top">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                          <StackPanel Name="to-do" Margin="0,0,0,17" Width="432" Height="50">
+                            <StackPanel Name="to-do" Margin="0,0,0,17" Width="432" Height="50">
                                 <TextBlock Text="{Binding}" FontSize="36"/>
-                                <!--<TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                              <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
-                          </StackPanel>
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+                    <TextBlock Name="Total" Text="" Width="120" Height="100" FontSize="72" HorizontalAlignment="Center"/>
+                </StackPanel>
             </controls:PivotItem>
-
         </controls:Pivot>
     </Grid>
- 
+
     <!--Sample code showing usage of ApplicationBar-->
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">

@@ -26,6 +26,7 @@ namespace GTD_G
             {
 
                 String NameTo = NameToDo.Text.ToString();
+                
                 IsolatedStorageSettings.ApplicationSettings["Name"] = NameTo;
 
                 int Sum = (int)Summ.SelectedItem;
